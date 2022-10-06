@@ -24,7 +24,7 @@ namespace ROR2HPBarAPI.Core {
 				AbstractColorProvider provider = Registry.GetProvider(@this.body);
 				if (provider != null) {
 					// ... then (im)politely come in and quietly edit the results.
-					provider.UpdateShieldColorOverride(@this.body);
+					provider.UpdateShieldOverrides(@this.body);
 					provider.ShieldRenderData.ApplyTo(@this);
 				}
 			}

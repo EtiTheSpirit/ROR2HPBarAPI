@@ -34,7 +34,7 @@ namespace ROR2HPBarAPI.API {
 		/// When called, the implementor should edit <see cref="ShieldRenderData"/> to reflect upon the implementor's wishes.
 		/// </summary>
 		/// <param name="sourceBody">The <see cref="CharacterBody"/> that this is rendering for.</param>
-		public abstract void UpdateShieldColorOverride(CharacterBody sourceBody);
+		public abstract void UpdateShieldOverrides(CharacterBody sourceBody);
 
 	}
 }

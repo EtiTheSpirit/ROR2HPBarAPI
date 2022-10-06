@@ -1,7 +1,7 @@
 ﻿{
 	"name": "HPBarAPI",
 	"version_number": "1.0.0",
-	"website_url": "",
+	"website_url": "https://github.com/EtiTheSpirit/ROR2HPBarAPI",
 	"description": "An API that allows modders to easily edit the appearance of their characters' and monsters' healthbars, as well as the appearance of shields on the characters' bodies. It's good for adding some extra flavor.",
 	"dependencies": [
 		"bbepis-BepInExPack-5.4.2103",

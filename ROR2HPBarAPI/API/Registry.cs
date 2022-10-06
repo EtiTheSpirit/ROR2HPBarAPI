@@ -18,6 +18,10 @@ namespace ROR2HPBarAPI.API {
 			return $"{src.Info.Metadata.Name} ({src.Info.Metadata.GUID} ver. {src.Info.Metadata.Version})";
 		}
 
+		private static string BodyToString(BodyIndex index) {
+			return $"BodyIndex[Value={index}, Name={BodyCatalog.GetBodyName(index) ?? "<no name, is the BodyCatalog available?>"}]";
+		}
+
 		/// <summary>
 		/// Attempts to get ahold of a provider for colors, returning null if one could not be acquired.
 		/// </summary>
@@ -45,11 +49,11 @@ namespace ROR2HPBarAPI.API {
 		/// <param name="provider">The system to provide colors to the color manager.</param>
 		public static void RegisterColorProvider(BaseUnityPlugin source, BodyIndex bodyIndex, AbstractColorProvider provider) {
 			if (source == null) throw new ArgumentNullException(nameof(source));
-			if (bodyIndex == BodyIndex.None) throw new ArgumentException($"Cannot register {nameof(BodyIndex.None)} to a provider.", nameof(bodyIndex));
 			if (provider == null) throw new ArgumentNullException(nameof(provider));
-			if (_registry.ContainsKey(bodyIndex)) throw new ArgumentException($"BodyIndex {bodyIndex} has already been registered to a provider.", nameof(bodyIndex));
+			if (bodyIndex == BodyIndex.None) throw new ArgumentException($"Cannot register {nameof(BodyIndex.None)} to a provider.", nameof(bodyIndex));
+			if (_registry.ContainsKey(bodyIndex)) throw new ArgumentException($"{BodyToString(bodyIndex)} has already been registered to a provider by {PluginToString(_registeredIndexTracker[bodyIndex])}.", nameof(bodyIndex));
 
-			Log.LogInfo($"{PluginToString(source)} registered character {bodyIndex} ({BodyCatalog.GetBodyName(bodyIndex)}) to be overridden by {provider.GetType().FullName}");
+			Log.LogInfo($"{PluginToString(source)} registered {BodyToString(bodyIndex)} so that it gets overridden by {provider.GetType().FullName}");
 			_registry[bodyIndex] = provider;
 			_registeredIndexTracker[bodyIndex] = source;
 		}

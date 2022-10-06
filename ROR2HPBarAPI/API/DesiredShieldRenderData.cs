@@ -37,12 +37,12 @@ namespace ROR2HPBarAPI.API {
 				_currentGlobalMaterial = new Material(_shieldMtlTemplate);
 				storage.globalMaterialForBodyType = _currentGlobalMaterial;
 			}
-			if (ShieldColorIsDynamic) {
+			if (ShieldIsDynamic) {
 				if (storage.instanceMaterialForThisBody == null) {
 					storage.instanceMaterialForThisBody = new Material(_shieldMtlTemplate);
 				}
 			}
-			storage.useDynamicRendering = ShieldColorIsDynamic;
+			storage.useDynamicRendering = ShieldIsDynamic;
 			storage.renderMode = ShieldRenderMode;
 
 			return storage;
@@ -107,7 +107,7 @@ namespace ROR2HPBarAPI.API {
 		/// Due to the implementation of this feature, this is not computationally cheap when used in excess (a custom color costs one draw call), so please
 		/// practice restraint when using this, especially if the intent is to be used on many characters at once (10+).
 		/// </remarks>
-		public bool ShieldColorIsDynamic { get; set; }
+		public bool ShieldIsDynamic { get; set; }
 
 	}
 }
