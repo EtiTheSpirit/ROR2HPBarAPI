@@ -65,5 +65,9 @@ namespace ROR2HPBarAPI.Data {
 		public static implicit operator Color32(ImmutableColor @this) => new Color32(@this.R, @this.G, @this.B, @this.A);
 		public static implicit operator Color(ImmutableColor @this) => new Color(@this.R / 255f, @this.G / 255f, @this.B / 255f, @this.A / 255f);
 		public static implicit operator ImmutableColor(Color @this) => new ImmutableColor(FloatToByte(@this.r), FloatToByte(@this.g), FloatToByte(@this.b), FloatToByte(@this.a));
+
+		public override string ToString() {
+			return $"RGBA[{R}, {G}, {B}, {A}]";
+		}
 	}
 }

@@ -1,8 +1,13 @@
 # HP Bar API
+
+## What does it do?
 Allows modders to define custom colors for all parts of the health bar GUI, as well as for the shield overlay on characters' bodies. This functions for both player and non-player characters!
 
+## What does it NOT do?
+This does not add the ability to implement custom health types (sorry if you wanted to add a second shield or something, can't do that :c). This also does not add the ability to change the image used to draw a healthbar, but this specific limitation could potentially be lifted in the future.
+
 # How To Implement (for developers)
-To use this, start by adding the DLL as a dependency to your mod. You can download a built version of it from Thunderstore.
+To use this, start by adding the DLL as a dependency to your mod.
 
 ## Step 1: Create a color override
 The main component of this mod is an instance you create within your code that extends `ROR2HPBarAPI.API.AbstractColorProvider` - this class is basically what tells the system "here's the colors you *should* be using". This class can go anywhere, so put it where you think it should go in your code.

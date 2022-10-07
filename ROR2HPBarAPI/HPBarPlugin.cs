@@ -19,7 +19,7 @@ namespace ROR2HPBarAPI {
 		public const string PLUGIN_GUID = PLUGIN_AUTHOR + "." + PLUGIN_NAME;
 		public const string PLUGIN_AUTHOR = "Xan";
 		public const string PLUGIN_NAME = "HPBarAPI";
-		public const string PLUGIN_VERSION = "1.0.0";
+		public const string PLUGIN_VERSION = "2.0.0";
 
 		public static bool IsDebugMode => _debugMode.Value;
 		private static ConfigEntry<bool> _debugMode;
@@ -32,7 +32,7 @@ namespace ROR2HPBarAPI {
 			Updater.Init();
 			Log.LogMessage("Initialization complete.");
 
-			// TestImplementation.Init(this);
+			//TestImplementation.Init(this);
 		}
 	}
 }

@@ -8,23 +8,24 @@ namespace ROR2HPBarAPI.API {
 	/// </summary>
 	public enum ShieldRenderMode {
 		/// <summary>
-		/// Do not override vanilla behavior. Do whatever vanilla wants.
+		/// Use vanilla behavior for figuring out whether or not to render.
 		/// </summary>
-		Vanilla,
+		RenderWhenVanillaRenders,
 
 		/// <summary>
-		/// Render the custom shield iff the vanilla game wants to render one.
+		/// Figure out whether or not vanilla wants to render, and then proceed to do the exact opposite.
+		/// Render when vanilla doesn't want to. Don't render when vanilla does want to.
 		/// </summary>
-		ReplaceVanilla,
+		RenderOppositeOfVanilla,
 
 		/// <summary>
-		/// Even if the player has no shield, render it on their body anyway. The only exception to this rule is if
-		/// the player currently has the maximum amount of overlays.
+		/// Always render, no questions asked. The only exception to this rule is if
+		/// the player currently has the maximum amount of overlays (limit does not apply to barrier, only shield).
 		/// </summary>
 		AlwaysRender,
 
 		/// <summary>
-		/// Even if the player has a shield, never render it on their body.
+		/// Never render, no questions asked.
 		/// </summary>
 		NeverRender
 	}

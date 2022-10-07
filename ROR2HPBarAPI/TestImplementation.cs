@@ -15,21 +15,22 @@ namespace ROR2HPBarAPI {
 		}
 
 		public class Colors : AbstractColorProvider {
-			public override void UpdateBarColors(CharacterBody sourceBody) {
-				BarColorData.OverrideBarrierColor = new Color(1, 0, 0);
-				BarColorData.OverrideCullBar = new Color(0, 1, 0);
-				BarColorData.OverridePainColor = new Color(1, 0, 1);
-				BarColorData.OverrideHealingColor = new Color(0, 1, 1);
-				BarColorData.OverrideHealthColor = new Color(0, 1, 0);
-				BarColorData.OverrideLowHealthBacking = new Color(0.5f, 0.5f, 0.5f);
-				BarColorData.OverrideLowHealthFlashColor1 = new Color(0, 0, 0);
-				BarColorData.OverrideLowHealthFlashColor2 = new Color(255, 0, 0);
-				BarColorData.OverrideOSPBar = new Color(1, 0, 0, 0.5f);
-				BarColorData.OverrideShieldColor = new Color(0, 0, 1);
+			public override void UpdateBarColors(CharacterBody sourceBody, DesiredBarColorData barColorData) {
+				barColorData.OverrideBarrierColor = new Color(1, 0, 0);
+				barColorData.OverrideCullBar = new Color(0, 1, 0);
+				barColorData.OverridePainColor = new Color(1, 0, 1);
+				barColorData.OverrideHealingColor = new Color(0, 1, 1);
+				barColorData.OverrideHealthColor = new Color(0, 1, 0);
+				barColorData.OverrideLowHealthBacking = new Color(0.5f, 0.5f, 0.5f);
+				barColorData.OverrideLowHealthFlashColor1 = new Color(0, 0, 0);
+				barColorData.OverrideLowHealthFlashColor2 = new Color(255, 0, 0);
+				barColorData.OverrideOSPBar = new Color(1, 0, 0, 0.5f);
+				barColorData.OverrideShieldColor = new Color(0, 0, 1);
 			}
 
-			public override void UpdateShieldOverrides(CharacterBody sourceBody) {
-				
+			public override void UpdateShieldOverrides(CharacterBody sourceBody, DesiredShieldRenderData shieldRenderData) {
+				shieldRenderData.BarrierRenderMode = ShieldRenderMode.AlwaysRender;
+				shieldRenderData.OverrideBarrierColor = new Color(1, 0, 0);
 			}
 		}
 
