@@ -27,17 +27,17 @@ namespace ROR2HPBarAPI.Helper {
 			return null;
 		}
 
-		public static Sprite CreateSprite(Texture2D tex) {
+		public static Sprite CreateSprite(Texture2D tex, int? overridePixelsPerUnit = null, Vector4? overrideBorder = null) {
 			int resolution = tex.width;
 			if (resolution != tex.height) {
 				Log.LogError("The input texture is not square! It may not render correctly.");
 			}
-			return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(tex.width / 2, tex.height / 2), resolution);
+			return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(tex.width / 2, tex.height / 2), overridePixelsPerUnit ?? resolution, 0, SpriteMeshType.FullRect, overrideBorder ?? default);
 		}
 
-		public static Sprite CreateSprite(Stream fileIn) => CreateSprite(CreateTexture(fileIn));
+		public static Sprite CreateSprite(Stream fileIn, int? overridePixelsPerUnit = null, Vector4? overrideBorder = null) => CreateSprite(CreateTexture(fileIn), overridePixelsPerUnit, overrideBorder);
 
-		public static Sprite CreateSprite(string rsrcName) => CreateSprite(GetResource(rsrcName));
+		public static Sprite CreateSprite(string rsrcName, int? overridePixelsPerUnit = null, Vector4? overrideBorder = null) => CreateSprite(GetResource(rsrcName), overridePixelsPerUnit, overrideBorder);
 
 	}
 }

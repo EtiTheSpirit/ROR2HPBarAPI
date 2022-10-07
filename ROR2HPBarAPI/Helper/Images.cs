@@ -9,7 +9,12 @@ namespace ROR2HPBarAPI.Helper {
 		public static Sprite NormalBarrier {
 			get {
 				if (_normalBarrier == null) {
-					_normalBarrier = ImageHelper.CreateSprite("normalBarrier.png");
+					_normalBarrier = ImageHelper.CreateSprite("normalBarrier.png", 100, new Vector4(8, 8, 8, 8));
+					_normalBarrier.pivot.Set(32, 32);
+					_normalBarrier.rect.Set(0, 0, 64, 64);
+					_normalBarrier.textureRect.Set(0, 0, 64, 64);
+					_normalBarrier.textureRectOffset.Set(0, 0);
+					_normalBarrier.bounds.SetMinMax(new Vector3(-0.15f, -0.15f, -0.05f), new Vector3(0.15f, 0.15f, 0.05f));
 				}
 				return _normalBarrier;
 			}
@@ -19,8 +24,13 @@ namespace ROR2HPBarAPI.Helper {
 		public static Sprite ColorableBarrier {
 			get {
 				if (_colorableBarrier == null) {
-					_colorableBarrier = ImageHelper.CreateSprite("colorlessBarrier.png");
-				}
+					_colorableBarrier = ImageHelper.CreateSprite("colorlessBarrier.png", 100, new Vector4(8, 8, 8, 8));
+					_colorableBarrier.pivot.Set(32, 32);
+					_colorableBarrier.rect.Set(0, 0, 64, 64);
+					_colorableBarrier.textureRect.Set(0, 0, 64, 64);
+					_colorableBarrier.textureRectOffset.Set(0, 0);
+					_colorableBarrier.bounds.SetMinMax(new Vector3(-0.15f, -0.15f, -0.05f), new Vector3(0.15f, 0.15f, 0.05f));
+				} 
 				return _colorableBarrier;
 			}
 		}

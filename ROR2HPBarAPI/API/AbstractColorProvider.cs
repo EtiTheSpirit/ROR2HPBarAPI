@@ -15,12 +15,12 @@ namespace ROR2HPBarAPI.API {
 	public abstract class AbstractColorProvider {
 
 		/// <summary>
-		/// The implementor's copy of <see cref="DesiredBarColorData"/> that it should modify as needed.
+		/// This is the current <see cref="CharacterBody"/>'s health bar coloration data.
 		/// </summary>
 		public DesiredBarColorData BarColorData { get; } = new DesiredBarColorData();
 
 		/// <summary>
-		/// The implementor's copy of <see cref="DesiredShieldRenderData"/> that it should modify as needed.
+		/// This is the current <see cref="CharacterBody"/>'s shield coloration data.
 		/// </summary>
 		public DesiredShieldRenderData ShieldRenderData { get; } = new DesiredShieldRenderData();
 

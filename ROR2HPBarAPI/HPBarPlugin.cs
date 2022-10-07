@@ -31,6 +31,8 @@ namespace ROR2HPBarAPI {
 			DefaultHealthAndShieldData.Init();
 			Updater.Init();
 			Log.LogMessage("Initialization complete.");
+
+			// TestImplementation.Init(this);
 		}
 	}
 }
