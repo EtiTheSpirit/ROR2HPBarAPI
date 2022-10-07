@@ -28,6 +28,23 @@ Once you have your override all set up, it's time to register it. To do this, yo
 (A bit of a footnote, but the reason it wants a reference to the plugin is so that it knows who to blame for any errors when executing a handler (mostly with the intent isolating one person registering a body from a different mod, or from vanilla, so that it doesn't look like that mod's fault). Any given BodyIndex can only be registered once, so editing vanilla monsters or characters might not be such a good idea either.)
 
 # Changelog
+## 2.0.0
+#### Neat!
+
+### Breaking Changes
+* The color settings are now method parameters in the overridden API, and the properties are now internal (you cannot access them). This should make it a bit more natural to implement.
+* Changed the Vanilla shield render mode to still render custom colors, only rendering *when* vanilla would render (rather than meaning "use all vanilla behavior and colors")
+* Changed some default property names
+
+### New Features
+* You can now customize the color and intensity of barriers (from Topaz Brooch / Aegis)
+* You can now customize when barriers render
+
+### Fixes
+* Fixed a foolish mistake that would raise an NRE after teleporting
+
+### Changes
+
 ## 1.0.0
 #### Initial Release Simulator
 
